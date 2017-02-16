@@ -13,7 +13,7 @@ background-color: light-gray;
 .gameBoard td {
 width: 40px;
 height:40px;
-background-color:blue;
+background-color:gray;
 }
 
 table, th, td {
@@ -28,23 +28,22 @@ background-color: orange;
     display: none;
 }
 
-/*
 button {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    background: none;
-    font-size: 100%;
-    vertical-align: baseline;
+
+    position: relative;
+    padding: 10px 40px;
+    margin: 0px 10px 10px 0px;
+    border-radius: 10px;
     font-family: inherit;
-    font-weight: inherit;
-    color: inherit;
-    -webkit-appearance: none;
-    appearance: none;
-    -webkit-font-smoothing: antialiased;
-    -moz-font-smoothing: antialiased;
-    font-smoothing: antialiased;
+    font-size: inherit;
+    color: #FFF;
+    background-color: red;
+    text-decoration: none;
+    text-transform: scale(1.25, 1.25);  
+    -ms-transform: scale(0.8, 0.8);
+    -webkit-transform: scale(0.8, 0.8);
 }
+
 
 body {
     font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -61,11 +60,12 @@ body {
     padding: 15px;
 }
 
+/*
+
 button,
 input[type="checkbox"] {
     outline: none;
 }
-
 
 
 #todoapp {
@@ -349,10 +349,7 @@ footer:before {
     text-align: center;
 }
 
-/*
-	Hack to remove background from Mobile Safari.
-	Can't use it globally since it destroys checkboxes in Firefox
-* /
+
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
     #toggle-all,
     #todo-list li .toggle {
@@ -380,4 +377,5 @@ footer:before {
         bottom: 10px;
     }
 }
+
 */
