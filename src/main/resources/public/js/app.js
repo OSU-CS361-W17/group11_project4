@@ -1,11 +1,20 @@
 var gameModel;
 
+
 $( document ).ready(function() {
   // Handler for .ready() called.
   $.getJSON("model", function( json ) {
   gameModel = json;
     console.log( "JSON Data: " + json );
    });
+
+  // event listener on "done" button, so when the user is done placing ships
+  // the interface to place ships will be hidden and the enemy board will be shown
+  $("#donePlaceShip").click(function() {
+     //alert("done button clicked");
+     $("#placeShipModal").addClass("hidden");
+     $("#enemyBoard").removeClass("hidden");
+  });
 });
 
 function placeShip() {

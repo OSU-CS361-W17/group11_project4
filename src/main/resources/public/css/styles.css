@@ -24,6 +24,10 @@ table, th, td {
 background-color: orange;
 }
 
+.hidden {
+    display: none;
+}
+
 /*
 button {
     margin: 0;
@@ -62,9 +66,7 @@ input[type="checkbox"] {
     outline: none;
 }
 
-.hidden {
-    display: none;
-}
+
 
 #todoapp {
     background: #fff;
