@@ -23,11 +23,6 @@ background-color:gray;
     background-image: url("http://www.hendrikronald.com/wp-content/uploads/2014/03/m9t97-backgrounds-535728798-1920x1080.jpg");
 }
 
-table.center {
-    margin-left: auto;
-    margin-right: auto;
-}
-
 table, th, td {
    border: 1px solid black;
 }
@@ -38,18 +33,6 @@ background-color: orange;
 
 .hidden {
     display: none;
-}
-
-.horizontalAlign {
-    width: 100%;
-    text-align: center;
-    margin: 0 auto;
-}
-
-.horizontalAlign .outer {
-    display: block;
-    float: left;
-    width: 50%;
 }
 
 button {
@@ -84,14 +67,17 @@ body {
     font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
     line-height: 1.4em;
     color: #4d4d4d;
+    min-width: 230px;
+    max-width: 550px;
     margin: 0 auto;
-    text-align: center;
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
     font-smoothing: antialiased;
     font-weight: 300;
     padding: 15px;
 }
+
+
 
 button,
 input[type="checkbox"] {
