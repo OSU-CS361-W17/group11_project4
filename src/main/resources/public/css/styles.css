@@ -3,17 +3,24 @@ body {
     margin: 0;
     padding: 0;
 }
-
+/*
 .gameBoard{
-/*with:100px;
-height:100px;*/
+ with:100px;
+height:100px;
 background-color: light-gray;
 }
-
+*/
 .gameBoard td {
 width: 40px;
 height:40px;
 background-color:gray;
+}
+
+.gamebg {
+    background-repeat: no-repeat;
+    color: white;
+    background-size: cover;
+    background-image: url("http://www.hendrikronald.com/wp-content/uploads/2014/03/m9t97-backgrounds-535728798-1920x1080.jpg");
 }
 
 table, th, td {
@@ -44,11 +51,21 @@ button {
     -webkit-transform: scale(0.8, 0.8);
 }
 
+h1{
+    color: white;
+    text-shadow: 0 0 2.5px #000000;
+
+}
+
+div{
+    color: white;
+    text-shadow: 0 0 2px #000000;
+    font-size: 110%;
+}
 
 body {
     font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
     line-height: 1.4em;
-    background: #f5f5f5;
     color: #4d4d4d;
     min-width: 230px;
     max-width: 550px;
@@ -60,14 +77,14 @@ body {
     padding: 15px;
 }
 
-/*
+
 
 button,
 input[type="checkbox"] {
     outline: none;
 }
 
-
+/*
 #todoapp {
     background: #fff;
     margin: 130px 0 40px 0;
@@ -94,6 +111,7 @@ input[type="checkbox"] {
     color: #e6e6e6;
 }
 
+
 #todoapp h1 {
     position: absolute;
     top: -155px;
@@ -106,6 +124,7 @@ input[type="checkbox"] {
     -moz-text-rendering: optimizeLegibility;
     text-rendering: optimizeLegibility;
 }
+
 
 #new-todo,
 .edit {
