@@ -1,0 +1,24 @@
+
+.fight{
+    text-align: center;
+}
+.main{
+    text-align: center;
+}
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+p {
+    font-size: 125%;
+}
+body {
+    background-repeat: no-repeat;
+    color: white;
+    background-size: cover;
+    background-image: url("http://www.hendrikronald.com/wp-content/uploads/2014/03/m9t97-backgrounds-535728798-1920x1080.jpg");
+}
