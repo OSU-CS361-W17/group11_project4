@@ -14,6 +14,7 @@ $( document ).ready(function() {
      //alert("done button clicked");
      $("#placeShipModal").addClass("hidden");
      $("#enemyBoard").removeClass("hidden");
+     $("#todoapp").addClass("horizontalAlign");
   });
 });
 
