@@ -51,6 +51,15 @@ class ShipTest {
         assertEquals(true,s.scan(new Coordinate(5,3)));
     }
 
+    /*
+        Test that the scan feature will return false for any ship
+        with "stealth" variable equal true
+    */
+    @Test
+    public void testStealthScan() {
+        Ship s = new Ship("Submarine", 2, new Coordinate(9,6), new Coordinate(9,8), true);
+        assertEquals(false, s.scan(new Coordinate(9,6)))
+    }
 
 
 

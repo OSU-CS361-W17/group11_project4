@@ -8,9 +8,9 @@ public class Ship {
     private int length;
     private Coordinate start;
     private Coordinate end;
-    private int stealth;
+    private boolean stealth;
 
-    public Ship(String n, int l,Coordinate s, Coordinate e, int hideme) {
+    public Ship(String n, int l,Coordinate s, Coordinate e, boolean hideme) {
         name = n;
         length = l;
         start = s;
@@ -53,28 +53,33 @@ public class Ship {
         return name;
     }
 
-    public int getStealth() {
+    public boolean getStealth() {
         return stealth;
     }
 
 
     public boolean scan(Coordinate coor) {
+        boolean scanResult = false;
         if(covers(coor)){
-            return true;
+            scanResult = true;
         }
         if(covers(new Coordinate(coor.getAcross()-1,coor.getDown()))){
-            return true;
+            scanResult = true;
         }
         if(covers(new Coordinate(coor.getAcross()+1,coor.getDown()))){
-            return true;
+            scanResult = true;
         }
         if(covers(new Coordinate(coor.getAcross(),coor.getDown()-1))){
-            return true;
+            scanResult = true;
         }
         if(covers(new Coordinate(coor.getAcross(),coor.getDown()+1))){
-            return true;
+            scanResult = true;
         }
-        return false;
+        if(this.stealth){
+            scanResult = false;
+        }
+
+        return scanResult;
     }
 }
 
