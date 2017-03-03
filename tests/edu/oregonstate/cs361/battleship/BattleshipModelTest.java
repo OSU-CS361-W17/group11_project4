@@ -26,19 +26,19 @@ class BattleshipModelTest {
 
     /**
      * Tests the stealth functionality and makes sure the correct boolean value is set
-     * 1 is for they are stealth
-     * 0 is for can be scanned
+     * true is for they are stealth
+     * false is for can be scanned
      */
     @Test
     void doesitstealth(){
         BattleshipModel model = new BattleshipModel();
-        assertEquals(0,model.getShip("AircraftCarrier").getStealth());
-        assertEquals(1,model.getShip("BattleShip").getStealth());
-        assertEquals(0,model.getShip("Cruiser").getStealth());
-        assertEquals(0,model.getShip("Destroyer").getStealth());
-        assertEquals(1,model.getShip("Submarine").getStealth());
-        assertEquals(0,model.getShip("Clipper").getStealth());
-        assertEquals(0,model.getShip("dinghy").getStealth());
+        assertEquals(false,model.getShip("AircraftCarrier").getStealth());
+        assertEquals(true,model.getShip("BattleShip").getStealth());
+        assertEquals(false,model.getShip("Cruiser").getStealth());
+        assertEquals(false,model.getShip("Destroyer").getStealth());
+        assertEquals(true,model.getShip("Submarine").getStealth());
+        assertEquals(false,model.getShip("Clipper").getStealth());
+        assertEquals(false,model.getShip("dinghy").getStealth());
     }
 
     @Test
