@@ -16,7 +16,6 @@ public class Ship {
         end = e;
     }
 
-
     public void setLocation(Coordinate s, Coordinate e) {
         start = s;
         end = e;
@@ -72,3 +71,4 @@ public class Ship {
         return false;
     }
 }
+
