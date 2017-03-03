@@ -28,6 +28,7 @@ public class Main {
     private static String newModel() {
         BattleshipModel bm = new BattleshipModel();
         Gson gson = new Gson();
+        System.out.print(gson.toJson(bm));
         return gson.toJson(bm);
     }
 

@@ -24,6 +24,23 @@ class BattleshipModelTest {
       return  model.placeShip(shipName,row,col,orientation).getShip(shipName).covers(new Coordinate(intRow,intCol));
     }
 
+    /**
+     * Tests the stealth functionality and makes sure the correct boolean value is set
+     * 1 is for they are stealth
+     * 0 is for can be scanned
+     */
+    @Test
+    void doesitstealth(){
+        BattleshipModel model = new BattleshipModel();
+        assertEquals(0,model.getShip("AircraftCarrier").getStealth());
+        assertEquals(1,model.getShip("BattleShip").getStealth());
+        assertEquals(0,model.getShip("Cruiser").getStealth());
+        assertEquals(0,model.getShip("Destroyer").getStealth());
+        assertEquals(1,model.getShip("Submarine").getStealth());
+        assertEquals(0,model.getShip("Clipper").getStealth());
+        assertEquals(0,model.getShip("dinghy").getStealth());
+    }
+
     @Test
     void placeShip() {
         BattleshipModel model = new BattleshipModel();
