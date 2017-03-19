@@ -8,9 +8,23 @@
 </head>
 <script src="/js/vendor/jquery-1.12.4.min.js"></script>
 <script src="/js/app.js"></script>
-
+<h1 id="battleship">BATTLESHIP </h1>
 <body background-color="gray">
-<div id="placeShipModal">
+
+
+<div id = "modepick">
+
+    <h1>Choose Difficulty</h1>
+    <div name = "difficulty" id = "difficulty">
+        <select name = "dif" id = "dif">
+            <option value="hard">Hard </option>
+            <option value="easy">Easy </option></br>
+        </select>
+        <br><br><button type="button" id = "donedif" onclick="modepick()">Done</button>
+    </div>
+</div>
+
+<div id="placeShipModal" class="hidden outerContain">
     <h1>Place Ships</h1>
     <div id="AircraftcarrierDiv">
         Ship:
@@ -60,7 +74,7 @@
 
 
 
-<section id="todoapp" ic-target="this">
+<section id="todoapp" ic-target="this" class="hidden outerContain">
     <!--#parse("/velocity/todoList.vm")-->
     <div id="userBoard" class="outerContain">
         <h1>YOUR SHIPS</h1>
@@ -349,8 +363,9 @@
         </div>
     </div>
 </section>
-    <h1>Scan:</h1>
-    <div id="ScanDiv">
+
+    <div id="ScanDiv" class="hidden outerContain">
+        <h1>Scan:</h1>
         Column:
         <select name="rowFire" id="rowScan">
             <option value="1">1</option>
