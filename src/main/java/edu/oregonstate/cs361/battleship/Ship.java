@@ -8,14 +8,12 @@ public class Ship {
     private int length;
     private Coordinate start;
     private Coordinate end;
-    private boolean stealth;
 
-    public Ship(String n, int l,Coordinate s, Coordinate e, boolean hideme) {
+    public Ship(String n, int l,Coordinate s, Coordinate e) {
         name = n;
         length = l;
         start = s;
         end = e;
-        stealth = hideme;
     }
 
     public void setLocation(Coordinate s, Coordinate e) {
@@ -52,11 +50,6 @@ public class Ship {
     public String getName() {
         return name;
     }
-
-    public boolean getStealth() {
-        return stealth;
-    }
-
 
     public boolean scan(Coordinate coor) {
         boolean scanResult = false;

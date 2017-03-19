@@ -159,7 +159,7 @@ public class BattleshipModel {
         }
     }
 
-    public boolean getScanResult() {
-        return scanResult;
-    }
+  //  public boolean getScanResult() {
+  //      return scanResult;
+  //  }
 }
