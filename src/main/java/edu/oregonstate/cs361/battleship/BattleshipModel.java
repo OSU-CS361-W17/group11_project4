@@ -28,12 +28,14 @@ public class BattleshipModel {
     protected CivilianShip computer_dinghy = new CivilianShip("Dinghy", 1, new Coordinate(0, 0), new Coordinate(0, 0),false);
 
 
+
     protected ArrayList<Coordinate> playerHits;
     protected ArrayList<Coordinate> playerMisses;
     protected ArrayList<Coordinate> computerHits;
     protected ArrayList<Coordinate> computerMisses;
 
     boolean scanResult = false;
+    boolean mode = true;
 
 
 
