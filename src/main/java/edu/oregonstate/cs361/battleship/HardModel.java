@@ -3,7 +3,7 @@ package edu.oregonstate.cs361.battleship;
 import java.util.Random;
 
 public class HardModel extends BattleshipModel{
-    private boolean wasHit;
+    public boolean wasHit;
 
     //changed or added methods or variables for hard mode are put here
     public HardModel() {
@@ -58,10 +58,15 @@ public class HardModel extends BattleshipModel{
 
         coor = new Coordinate(row, col);
         playerShot(coor);
+
+        return coor;
     }
 
     public boolean isLegal(int r, int c){
-        if(r < 1 || r > 10 || c < 1 || c > 10){
+        if(r < 1 || r > 10){
+            return false;
+        }
+        if(c < 1 || c > 10){
             return false;
         }
 
