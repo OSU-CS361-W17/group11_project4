@@ -7,8 +7,6 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * Created by michaelhilton on 2/7/17.
  */
-
-
 class BattleshipModelTest {
 
     @Test
@@ -16,8 +14,8 @@ class BattleshipModelTest {
         BattleshipModel model = new BattleshipModel();
         assertEquals("AircraftCarrier",model.getShip("AircraftCarrier").getName());
         assertEquals("Battleship",model.getShip("battleship").getName());
-        assertEquals("Cruiser",model.getShip("Cruiser").getName());
-        assertEquals("Destroyer",model.getShip("Destroyer").getName());
+        assertEquals("Clipper",model.getShip("Clipper").getName());
+        assertEquals("Dinghy",model.getShip("Dinghy").getName());
         assertEquals("Submarine",model.getShip("Submarine").getName());
         assertNull(model.getShip("SS Minnow"));
     }
@@ -26,22 +24,7 @@ class BattleshipModelTest {
       return  model.placeShip(shipName,row,col,orientation).getShip(shipName).covers(new Coordinate(intRow,intCol));
     }
 
-    /**
-     * Tests the stealth functionality and makes sure the correct boolean value is set
-     * true is for they are stealth
-     * false is for can be scanned
-     */
-  /*  @Test
-    void doesitstealth(){
-        BattleshipModel model = new BattleshipModel();
-        assertEquals(false,model.getShip("AircraftCarrier").getStealth());
-        assertEquals(true,model.getShip("BattleShip").getStealth());
-        assertEquals(false,model.getShip("Cruiser").getStealth());
-        assertEquals(false,model.getShip("Destroyer").getStealth());
-        assertEquals(true,model.getShip("Submarine").getStealth());
-        assertEquals(false,model.getShip("Clipper").getStealth());
-        assertEquals(false,model.getShip("dinghy").getStealth());
-    } */
+
 
     @Test
     void placeShip() {
@@ -65,22 +48,22 @@ class BattleshipModelTest {
                 testIfCovers(model, "Battleship","1","1","vertical",9,9));
 
         assertEquals(true,
-                testIfCovers(model, "Cruiser","1","1","horizontal",1,1));
+                testIfCovers(model, "Clipper","1","1","horizontal",1,1));
         assertEquals(true,
-                testIfCovers(model, "Cruiser","1","1","vertical",1,1));
+                testIfCovers(model, "Clipper","1","1","vertical",1,1));
         assertEquals(false,
-                testIfCovers(model, "Cruiser","1","1","horizontal",9,9));
+                testIfCovers(model, "Clipper","1","1","horizontal",9,9));
         assertEquals(false,
-                testIfCovers(model, "Cruiser","1","1","vertical",9,9));
+                testIfCovers(model, "Clipper","1","1","vertical",9,9));
 
         assertEquals(true,
-                testIfCovers(model, "Destroyer","1","1","horizontal",1,1));
+                testIfCovers(model, "Dinghy","1","1","horizontal",1,1));
         assertEquals(true,
-                testIfCovers(model, "Destroyer","1","1","vertical",1,1));
+                testIfCovers(model, "Dinghy","1","1","vertical",1,1));
         assertEquals(false,
-                testIfCovers(model, "Destroyer","1","1","horizontal",9,9));
+                testIfCovers(model, "Dinghy","1","1","horizontal",9,9));
         assertEquals(false,
-                testIfCovers(model, "Destroyer","1","1","vertical",9,9));
+                testIfCovers(model, "Dinghy","1","1","vertical",9,9));
 
         assertEquals(true,
                 testIfCovers(model, "Submarine","1","1","horizontal",1,1));
@@ -102,22 +85,27 @@ class BattleshipModelTest {
         model.shootAtComputer(1,1) ;
         assertEquals(true, model.computerHits.isEmpty());
 
+        //test hit on aircraft carrier
         model.shootAtComputer(2,3) ;
         assertEquals(2, model.computerHits.get(0).getAcross());
         assertEquals(3, model.computerHits.get(0).getDown());
 
+        //test hit on battleship
         model.shootAtComputer(6,8) ;
         assertEquals(6, model.computerHits.get(1).getAcross());
         assertEquals(8, model.computerHits.get(1).getDown());
 
-        model.shootAtComputer(4,4) ;
+        //test hit on clipper
+        model.shootAtComputer(1,1) ;
         assertEquals(4, model.computerHits.get(2).getAcross());
         assertEquals(4, model.computerHits.get(2).getDown());
 
-        model.shootAtComputer(7,3) ;
+        //test hit on dinghy
+        model.shootAtComputer(10,10) ;
         assertEquals(7, model.computerHits.get(3).getAcross());
         assertEquals(3, model.computerHits.get(3).getDown());
 
+        //test hit on submarine
         model.shootAtComputer(9,6) ;
         assertEquals(9, model.computerHits.get(4).getAcross());
         assertEquals(6, model.computerHits.get(4).getDown());
@@ -129,8 +117,8 @@ class BattleshipModelTest {
         BattleshipModel model = new BattleshipModel();
         model.placeShip("Aircraftcarrier","1","5","horizontal");
         model.placeShip("Battleship","2","4","horizontal");
-        model.placeShip("Cruiser","3","3","horizontal");
-        model.placeShip("Destroyer","4","2","horizontal");
+        model.placeShip("Clipper","3","3","horizontal");
+        model.placeShip("Dinghy","4","2","horizontal");
         model.placeShip("Submarine","5","1","horizontal");
 
         model.playerShot(new Coordinate(9,9));
@@ -157,14 +145,14 @@ class BattleshipModelTest {
         assertEquals(1, model.playerHits.get(4).getDown());
     }
 
-/*    @Test
+    @Test
     void testsScan() {
         BattleshipModel model = new BattleshipModel();
         model.scan(2,2);
         assertEquals(true,model.getScanResult());
 
         model.scan(6,6);
-        assertEquals(false,model.getScanResult()); */
+        assertEquals(false,model.getScanResult());
 
 //        model.shootAtComputer(1,1) ;
 //        assertEquals(true, model.computerHits.isEmpty());
@@ -188,7 +176,7 @@ class BattleshipModelTest {
 //        model.shootAtComputer(9,6) ;
 //        assertEquals(9, model.computerHits.get(4).getAcross());
 //        assertEquals(6, model.computerHits.get(4).getDown());
-//    }
+    }
 
 
 
