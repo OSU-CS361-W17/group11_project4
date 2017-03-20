@@ -29,11 +29,12 @@ public class BattleshipModel {
 
 
     ArrayList<Coordinate> playerHits;
-    private ArrayList<Coordinate> playerMisses;
+    protected ArrayList<Coordinate> playerMisses;
     ArrayList<Coordinate> computerHits;
-    private ArrayList<Coordinate> computerMisses;
+    protected ArrayList<Coordinate> computerMisses;
 
     boolean scanResult = false;
+    boolean mode = true;
 
 
 

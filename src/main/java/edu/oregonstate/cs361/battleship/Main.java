@@ -1,6 +1,7 @@
 package edu.oregonstate.cs361.battleship;
 
 import com.google.gson.Gson;
+import com.sun.org.apache.xpath.internal.operations.Variable;
 import spark.Request;
 
 import java.io.UnsupportedEncodingException;
@@ -17,11 +18,11 @@ public class Main {
         //This will listen to GET requests to /model and return a clean new model
         post("/model/:mode", (req, res) -> newModel(req));
         //This will listen to POST requests and expects to receive a game model, as well as location to fire to
-        post("/fire/:row/:col", (req, res) -> fireAt(req));
+        post("/fire/:row/:col/:mode", (req, res) -> fireAt(req));
         //This will listen to POST requests and expects to receive a game model, as well as location to scan
-        post("/scan/:row/:col", (req, res) -> scan(req));
+        post("/scan/:row/:col/:mode", (req, res) -> scan(req));
         //This will listen to POST requests and expects to receive a game model, as well as location to place the ship
-        post("/placeShip/:id/:row/:col/:orientation", (req, res) -> placeShip(req));
+        post("/placeShip/:id/:row/:col/:orientation/:mode", (req, res) -> placeShip(req));
     }
 
     //This function returns a new model
@@ -45,6 +46,9 @@ public class Main {
 
     //This function accepts an HTTP request and deseralizes it into an actual Java object.
     private static BattleshipModel getModelFromReq(Request req){
+        System.out.print(req.params("mode"));
+        String mode = req.params("mode");
+        BattleshipModel modelFromReq = null;
         Gson gson = new Gson();
         String result = "";
         try {
@@ -52,7 +56,14 @@ public class Main {
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
-        BattleshipModel modelFromReq = gson.fromJson(result, BattleshipModel.class);
+        if(mode.equals("hard")){
+            modelFromReq = gson.fromJson(result, HardModel.class);
+            System.out.print("FUCK YOU");
+        }
+        if(mode.equals("easy")){
+            modelFromReq = gson.fromJson(result, EasyModel.class);
+            System.out.print("FUCK YOU TOO");
+        }
         return modelFromReq;
     }
 
