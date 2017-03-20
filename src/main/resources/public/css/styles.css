@@ -97,6 +97,14 @@ button,
 input[type="checkbox"] {
     outline: none;
 }
+#modepick {
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    border: 3px solid white;
+    padding: 10px;
+}
+
 
 /*
 #todoapp {

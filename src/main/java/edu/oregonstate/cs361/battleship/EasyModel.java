@@ -30,3 +30,4 @@ public class EasyModel extends BattleshipModel {
         nextShotDown = 1;
     }
 }
+
