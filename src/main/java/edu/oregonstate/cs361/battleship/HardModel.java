@@ -58,8 +58,6 @@ public class HardModel extends BattleshipModel{
 
         coor = new Coordinate(row, col);
         playerShot(coor);
-
-        return coor;
     }
 
     public boolean isLegal(int r, int c){
