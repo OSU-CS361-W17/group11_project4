@@ -1,3 +1,6 @@
+
+package edu.oregonstate.cs361.battleship;
+
 import edu.oregonstate.cs361.battleship.BattleshipModel;
 
 public class HardModel extends BattleshipModel{
