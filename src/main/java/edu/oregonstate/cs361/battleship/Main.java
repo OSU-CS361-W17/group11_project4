@@ -15,7 +15,7 @@ public class Main {
         staticFiles.location("/public");
 
         //This will listen to GET requests to /model and return a clean new model
-        get("/model", (req, res) -> newModel());
+        post("/model/:mode", (req, res) -> newModel(req));
         //This will listen to POST requests and expects to receive a game model, as well as location to fire to
         post("/fire/:row/:col", (req, res) -> fireAt(req));
         //This will listen to POST requests and expects to receive a game model, as well as location to scan
@@ -25,8 +25,19 @@ public class Main {
     }
 
     //This function returns a new model
-    private static String newModel() {
-        BattleshipModel bm = new BattleshipModel();
+    private static String newModel(Request req) {
+        String mode = req.params("mode");
+        BattleshipModel bm = null;
+
+        if(mode.equals("hard")){
+            System.out.print("HARD!!!" + mode);
+            bm = new HardModel();
+        }
+        if(mode.equals("easy")){
+            System.out.print("EASY!!!" + mode);
+            bm = new EasyModel();
+        }
+        //BattleshipModel bm = new BattleshipModel();
         Gson gson = new Gson();
         System.out.print(gson.toJson(bm));
         return gson.toJson(bm);

@@ -3,10 +3,10 @@ var gameModel;
 
 $( document ).ready(function() {
   // Handler for .ready() called.
-  $.getJSON("model", function( json ) {
+ /* $.getJSON("model", function( json ) {
   gameModel = json;
     console.log( "JSON Data: " + json );
-   });
+   });*/
 
   // event listener on "done" button, so when the user is done placing ships
   // the interface to place ships will be hidden and the enemy board will be shown
@@ -16,7 +16,37 @@ $( document ).ready(function() {
      $("#enemyBoard").removeClass("hidden");
      $("#todoapp").addClass("horizontalAlign");
   });
+  $("#donedif").click(function() {
+       //alert("done button clicked");
+       $("#modepick").addClass("hidden");
+       $("#placeShipModal").removeClass("hidden");
+       $("#ScanDiv").removeClass("hidden");
+       $("#todoapp").removeClass("hidden");
+      // $("#todoapp").addClass("horizontalAlign");
+    });
 });
+
+
+//decides what mode it will be, replaces the model
+function modepick(){
+    console.log($( "#dif" ).val());
+    var request = $.ajax({
+         url: "/model/"+$( "#dif" ).val(),
+         method: "post",
+         data: JSON.stringify(gameModel),
+         contentType: "application/json; charset=utf-8",
+         dataType: "json"
+    });
+   request.done(function( bm ) {
+     displayGameState(bm);
+     gameModel = bm;
+
+   });
+   request.fail(function( jqXHR, textStatus ) {
+     alert( "Request failed: " + textStatus );
+   });
+
+}
 
 function placeShip() {
    console.log($( "#shipSelec" ).val());
