@@ -1,4 +1,4 @@
-import edu.oregonstate.cs361.battleship.BattleshipModel;
+package edu.oregonstate.cs361.battleship;
 
 public class EasyModel extends BattleshipModel {
     //changed or added methods or variables for easy mode are put here
