@@ -40,6 +40,8 @@ class EasyModelTest {
         model.shootAtPlayer();
         assertEquals(5, model.playerHits.get(0).getAcross());
         assertEquals(1, model.playerHits.get(0).getDown());
+
+
     }
 
 }
