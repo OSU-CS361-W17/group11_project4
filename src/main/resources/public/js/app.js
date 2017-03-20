@@ -53,10 +53,11 @@ function placeShip() {
    console.log($( "#rowSelec" ).val());
    console.log($( "#colSelec" ).val());
    console.log($( "#orientationSelec" ).val());
+   console.log($( "#dif" ).val());
 
    //var menuId = $( "ul.nav" ).first().attr( "id" );
    var request = $.ajax({
-     url: "/placeShip/"+$( "#shipSelec" ).val()+"/"+$( "#rowSelec" ).val()+"/"+$( "#colSelec" ).val()+"/"+$( "#orientationSelec" ).val(),
+     url: "/placeShip/"+$( "#shipSelec" ).val()+"/"+$( "#rowSelec" ).val()+"/"+$( "#colSelec" ).val()+"/"+$( "#orientationSelec" ).val()+"/"+$( "#dif" ).val(),
      method: "post",
      data: JSON.stringify(gameModel),
      contentType: "application/json; charset=utf-8",
@@ -82,7 +83,7 @@ function fire(){
    console.log($( "#rowFire" ).val());
 //var menuId = $( "ul.nav" ).first().attr( "id" );
    var request = $.ajax({
-     url: "/fire/"+$( "#colFire" ).val()+"/"+$( "#rowFire" ).val(),
+     url: "/fire/"+$( "#colFire" ).val()+"/"+$( "#rowFire" ).val()+"/"+$( "#dif" ).val(),
      method: "post",
      data: JSON.stringify(gameModel),
      contentType: "application/json; charset=utf-8",
@@ -106,7 +107,7 @@ function scan(){
    console.log($( "#rowScan" ).val());
 //var menuId = $( "ul.nav" ).first().attr( "id" );
    var request = $.ajax({
-     url: "/scan/"+$( "#colScan" ).val()+"/"+$( "#rowScan" ).val(),
+     url: "/scan/"+$( "#colScan" ).val()+"/"+$( "#rowScan" ).val()+"/"+$( "#dif" ).val(),
      method: "post",
      data: JSON.stringify(gameModel),
      contentType: "application/json; charset=utf-8",
