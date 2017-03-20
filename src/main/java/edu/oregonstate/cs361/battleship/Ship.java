@@ -68,9 +68,9 @@ public class Ship {
         if(covers(new Coordinate(coor.getAcross(),coor.getDown()+1))){
             scanResult = true;
         }
-        if(this.stealth){
-            scanResult = false;
-        }
+     //   if(this.stealth){
+     //       scanResult = false;
+     //   }
 
         return scanResult;
     }
